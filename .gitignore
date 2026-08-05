@@ -10,3 +10,4 @@ git/
 
 # Ignore temporary backup directories from recovery
 git_removed_backup/
+python_program/calculator.py
