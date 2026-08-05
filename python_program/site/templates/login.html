@@ -6,7 +6,7 @@
   <title>{{ t.titulo_aba }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
+<body><div class="topbar"><div class="brand"><img src="{{ url_for(\"static\", filename=\"logo.png\") }}" alt="Logo" class="site-logo"></div></div>
   <main class="page">
     <section class="card">
       <h1>{{ t.titulo_login }}</h1>
@@ -27,3 +27,4 @@
   </main>
 </body>
 </html>
+
