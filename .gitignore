@@ -1,0 +1,12 @@
+# Ignore local Python virtual environment and temporary tool directories
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore the embedded Git distribution used by VS Code / local tooling
+git/
+
+# Ignore temporary backup directories from recovery
+git_removed_backup/
