@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login realizado</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>Login realizado com sucesso!</h1>
+      <p>Você entrou no sistema corretamente.</p>
+      <div class="links">
+        <a href="{{ url_for('pagina_inicial') }}">Voltar para a página inicial</a>
+        <a href="{{ url_for('logout') }}">Sair</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html lang="{{ idioma_atual }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t.erro_titulo }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <section class="card error-card">
+      <h1>{{ t.erro_titulo }}</h1>
+      <p>{{ t.erro_1 }}</p>
+      <p>{{ t.erro_2 }}</p>
+      <div class="links">
+        <a href="{{ url_for('pagina_inicial') }}?lang={{ idioma_atual }}">Voltar</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

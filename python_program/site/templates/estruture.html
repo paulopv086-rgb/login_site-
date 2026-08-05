@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="{{ idioma_atual }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t.titulo_aba_home }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>{{ t.titulo_cadastro }}</h1>
+      {% if usuario %}
+        <p class="welcome">{{ t.boas_vindas }} {{ usuario }} — {{ t.texto_logado }}</p>
+      {% else %}
+        <p class="subtitle">{{ t.subtitulo_criar_conta }}</p>
+      {% endif %}
+
+      <form action="{{ url_for('pagina_dados') }}?lang={{ idioma_atual }}" method="post">
+        <label for="nome_usuario">{{ t.nome_label }}</label>
+        <input id="nome_usuario" name="nome_usuario" type="text" placeholder="{{ t.placeholder_nome }}" required>
+
+        <label for="idade">{{ t.idade_label }}</label>
+        <input id="idade" name="idade" type="text" placeholder="{{ t.placeholder_idade }}">
+
+        <label for="email">{{ t.email_label }}</label>
+        <input id="email" name="email" type="email" placeholder="{{ t.placeholder_email }}">
+
+        <label for="senha">{{ t.senha_label }}</label>
+        <input id="senha" name="senha" type="password" placeholder="{{ t.placeholder_senha }}">
+
+        <button type="submit">{{ t.botao_cadastrar }}</button>
+      </form>
+
+      <div class="links">
+        {% if usuario %}
+          <a href="{{ url_for('logout') }}">{{ t.botao_logout }}</a>
+        {% else %}
+          <a href="{{ url_for('tela_login') }}?lang={{ idioma_atual }}">{{ t.link_fazer_login }}</a>
+        {% endif %}
+      </div>
+    </section>
+  </main>
+</body>
+</html>

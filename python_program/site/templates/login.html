@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="{{ idioma_atual }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ t.titulo_aba }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <h1>{{ t.titulo_login }}</h1>
+      <form action="{{ url_for('tela_login') }}?lang={{ idioma_atual }}" method="post">
+        <label for="usuario">{{ t.usuario }}</label>
+        <input id="usuario" name="usuario" type="text" placeholder="{{ t.usuario }}" required>
+
+        <label for="senha">{{ t.senha }}</label>
+        <input id="senha" name="senha" type="password" placeholder="{{ t.senha }}" required>
+
+        <button type="submit">{{ t.botao_entrar }}</button>
+      </form>
+
+      <div class="links">
+        <a href="{{ url_for('pagina_inicial') }}?lang={{ idioma_atual }}">{{ t.link_cadastro }}</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
